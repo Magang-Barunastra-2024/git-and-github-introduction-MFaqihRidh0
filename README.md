@@ -3,9 +3,10 @@
 
 | Nama  | Division        | Sub-Division  |
 | ----- | ---------- | ---------- |
-| Name here   | ELC/PGR | Sub-div |
+| M. Faqih Ridho   | PGR | Vision |
 
-## Early Procedure
+![alt text](https://github.com/Magang-Barunastra-2024/git-and-github-introduction-MFaqihRidh0/blob/main/Prototipe%20kapal%20Barunastra%20Github%20tugas.jpeg?raw=true)
+## Early Procedure 
 
 ## Create Repository
 
