@@ -6,119 +6,88 @@
 | M. Faqih Ridho   | PGR | Vision |
 
 ![alt text](https://github.com/Magang-Barunastra-2024/git-and-github-introduction-MFaqihRidh0/blob/main/Prototipe%20kapal%20Barunastra%20Github%20tugas.jpeg?raw=true)
-**## Early Procedure 
-##Install Git:
-Unduh dan instal Git dari git-scm.com.
-Periksa instalasi dengan menjalankan perintah berikut di terminal:
-bash
-Salin kode
-git --version
-Konfigurasi Git:
-Atur nama pengguna dan email Anda:
-bash
-Salin kode
-git config --global user.name "Nama Anda"
-git config --global user.email "email@anda.com"
-Buat Akun GitHub:
-Daftarkan akun di GitHub.
-Create Repository
-Cara Membuat Repository di GitHub:
+# Cara Menggunakan Git & Github
 
-Login ke akun GitHub Anda.
-Klik ikon + di kanan atas halaman GitHub, lalu pilih "New Repository".
-Isi nama repository Anda.
-Tambahkan deskripsi (opsional).
-Pilih pengaturan visibilitas (Public/Private).
-Klik tombol "Create Repository".
-Clone Repository ke Lokal (Opsional):
+## A. Prosedur Awal
+### 1. Melakukan instal Git ke PC/Laptop
+	https://git-scm.com/downloads
+### 2. Membuat akun Github
+	https://github.com/join
+### 3. Melakukan setting pada Git Bash atau Terminal
+   ```
+   git config --global user.name (masukkan username)
+   git config --global user.email (masukkan email)
+   ```
+### 4. Membuat SSH Keys pada laman Github
+   #### a. Buka laman Github lalu menuju Settings -> SSH and GPG keys -> New SSH Key
+   #### b. Untuk key sendiri dapat dibuat dengan cara membuka Git Bash dan memasukkan command line berikut
+   ```
+   ssh-keygen -t ed25519 -C (masukkan email)
+   ### Kemudian pencet enter 2x ###
+   ```
+   #### c. Copy clip SSH key yang telah dibuat dengan command line berikut
+   ```
+   clip < ~/.ssh/id_ed25519.pub
+   ```
+   #### d. Kemudian paste atau Ctrl+V ke bagian key pada setting New SSH Key di Github
 
-Salin URL repository yang telah dibuat.
-Buka terminal dan jalankan:
-bash
-Salin kode
-git clone <URL-repository>
-Ini akan menyalin repository ke komputer Anda.
-Push File from Local to GitHub
-Cara Push File dari Lokal ke GitHub:
+## B. Membuat Repository
+### 1. Bukan laman Github
+	https://github.com/new
+### 2. Masukkan nama repository yang diinginkan beserta tipenya (private atau public) kemudian klik create repository
+### 3. Buka repository yang telah dibuat
+### 4. Klik Code -> SSH -> pencet tombol berbentuk 2 kotak untuk meng-copy link SSH
+### 5. Untuk menghubungkan dengan file local bisa menggunakan dua cara sebagai berikut (kedua cara ini juga bisa digunakan untuk mendownload repository yang telah ada isinya ke file local):
+   #### a. Manual 
+   ##### i. Membuat folder di File Explorer dengan judul folder sama seperti repository
+   ##### ii. Klik kanan dan buka Git Bash
+   ##### iii. Masukkan command line berikut pada Git Bash
 
-Tambahkan file ke direktori repository lokal.
-Inisialisasi repository lokal (jika belum dilakukan):
-bash
-Salin kode
-git init
-Tambahkan file ke staging area:
-bash
-Salin kode
+   	git init
+   	git remote add origin (link SSH yang telah di-copy)
+   	git branch -M main
+   ##### iv. Agar memastikan folder di local sama dengan folder di Github, masukkan command line berikut pada Git Bash
+	
+ 	git pull origin (branch yang ingin didownload)
+   #### b. Git Clone
+   ##### i. Buka Git Bash pada folder parent yang diinginkan dan masukkan command line berikut
+
+	git clone (link SSH yang telah di-copy)
+   ##### ii. Folder/Repository akan muncul pada File Explorer / Folder parent yang telah dipilih
+   ##### iii. Kemudian buka folder tersebut
+   ##### iv. Klik kanan dan buka Git Bash
+   ##### v. Masukkan command line berikut pada Git Bash
+
+	git branch -M main
+
+## C. Mengunggah File di Local ke Github
+### 1. Folder yang telah dibuat tersebut dapat secara bebas diisi dengan apa saja, tetapi baru tersimpan di local dan perlu diupload ke Github
+### 2. Buka folder di local yang telah dibuat dan diisi
+### 3. Klik kanan dan buka Git Bash
+### 4. Masukkan command line berikut pada Git Bash
+```
 git add .
-Commit perubahan:
-bash
-Salin kode
-git commit -m "Pesan commit"
-Hubungkan repository lokal ke GitHub:
-bash
-Salin kode
-git remote add origin <URL-repository>
-Push file ke GitHub:
-bash
-Salin kode
-git push -u origin main
-##Create New Branch in GitHub
-Cara Membuat Branch Baru:
+git commit -m "(ketikkan deskripsi dengan bebas)"
+git push origin (branch yang ingin diupload)
+```
 
-Buat branch baru di lokal:
-bash
-Salin kode
-git branch <nama-branch>
-Pindah ke branch tersebut:
-bash
-Salin kode
-git checkout <nama-branch>
-Push branch baru ke GitHub:
-bash
-Salin kode
-git push -u origin <nama-branch>
-##Delete Branch in GitHub
-Cara Menghapus Branch di GitHub:
+## D. Membuat Branch Baru di Github
+### 1. Branch adalah versi lainnya dari suatu folder di Github, dengan branch dapat melakukan perubahan versi di folder atau memasukkan isi yang lain tanpa menganggu branch utama
+### 2. Buka folder yang diingikan yang telah terhubung dengan Github
+### 3. Klik kanan dan buka Git Bash
+### 4. Masukkan command line berikut pada Git Bash
+	git checkout -B (nama branch yang diinginkan)
+### 5. Untuk pindah ke branch yang telah dibuat dapat menggunakan command line berikut
+	git checkout (nama branch yang telah dibuat)
 
-Pastikan branch yang akan dihapus tidak sedang aktif.
-Hapus branch di lokal:
-bash
-Salin kode
-git branch -d <nama-branch>
-Hapus branch di GitHub:
-bash
-Salin kode
-git push origin --delete <nama-branch>
-##Merging Branch in GitHub
-Cara Melakukan Merging Branch:
+## E. Menghapus Branch di Github
+### 1. Pindah ke branch lain yang tidak dihapus dengan command line berikut
+	git checkout (nama branch yang diinginkan)
+### 2. Masukkan command line berikut untuk menghapus branch yang dipilih
+	git branch -d (nama branch yang ingin dihapus)
 
-Pindah ke branch utama (misalnya main):
-bash
-Salin kode
-git checkout main
-Merge branch lain ke branch utama:
-bash
-Salin kode
-git merge <nama-branch>
-Push perubahan ke GitHub:
-bash
-Salin kode
-git push origin main
-##Other Procedure
-Melihat Log Commit:
-bash
-Salin kode
-git log
-Melihat Daftar Branch:
-bash
-Salin kode
-git branch
-Membatalkan Perubahan:
-Hapus perubahan pada file tertentu:
-bash
-Salin kode
-git checkout -- <nama-file>
-Reset ke commit sebelumnya:
-bash
-Salin kode
-git reset --hard <commit-id>
+## F. Menggabungkan Branch di Github
+### 1. Pindah ke branch yang ingin menjadi branch utama dari branch yang ingin digabungkan dengan command line berikut
+	git checkout (nama branch yang diinginkan)
+### 2. Gabungkan branch dengan command line berikut
+	git merge (nama branch yang ingin digabungkan)
